@@ -25,6 +25,7 @@ export class TodoItemFlatNode {
   item: string;
   level: number;
   expandable: boolean;
+  prio?:boolean;
 }
 
 /**
@@ -32,7 +33,7 @@ export class TodoItemFlatNode {
  */
 const TREE_DATA = {
   Electrique: {
-    '4PP*': null,
+    '4PP': null,
     'C-V': null,
     'G-V': null,
     VDB: null,
@@ -181,6 +182,8 @@ export class StepperVerticalExample {
 
   isExpandable = (node: TodoItemFlatNode) => node.expandable;
 
+  isPrio = (node: TodoItemFlatNode) => node.prio;
+
   getChildren = (node: TodoItemNode): TodoItemNode[] => node.children;
 
   hasChild = (_: number, _nodeData: TodoItemFlatNode) => _nodeData.expandable;
@@ -200,6 +203,7 @@ export class StepperVerticalExample {
     flatNode.item = node.item;
     flatNode.level = level;
     flatNode.expandable = !!node.children;
+    flatNode.prio= Boolean(Math.round(Math.random()));
     this.flatNodeMap.set(flatNode, node);
     this.nestedNodeMap.set(node, flatNode);
     return flatNode;
