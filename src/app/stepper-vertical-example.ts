@@ -18,6 +18,7 @@ import { FoodNode } from './models/FoodNode';
 export class TodoItemNode {
   children: TodoItemNode[];
   item: string;
+  prio?: boolean;
 }
 
 /** Flat to-do item node with expandable and level information */
@@ -77,6 +78,7 @@ export class ChecklistDatabase {
       const value = obj[key as keyof typeof obj];
       const node = new TodoItemNode();
       node.item = key;
+      node.prio = Boolean(Math.round(Math.random()));
 
       if (value != null) {
         if (typeof value === 'object') {

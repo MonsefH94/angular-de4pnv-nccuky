@@ -46,6 +46,9 @@
                 (change)="checklistSelection.toggle(node);"
                 >{{node.item}}</mat-checkbox
               >
+              <mat-icon *ngIf="node.prio"  class="icone"  matBadgeColor="warn"
+                >warning</mat-icon
+              >
             </mat-tree-node>
 
             <mat-tree-node
@@ -81,8 +84,8 @@
                 (change)="todoItemSelectionToggle(node)"
                 >{{node.item}}</mat-checkbox
               >
-              <mat-icon *ngIf="node.prio" matBadge="15" matBadgeColor="warn"
-                >home</mat-icon
+              <mat-icon *ngIf="node.prio"  class="icon" matBadge="2" matBadgeSize="small" matBadgeColor="warn"
+                >warning</mat-icon
               >
             </mat-tree-node>
           </mat-tree>

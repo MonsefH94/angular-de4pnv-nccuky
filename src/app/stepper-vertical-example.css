@@ -29,7 +29,16 @@
   padding-inline: 26px;
 }
 
-
 .green ::ng-deep.mat-form-field-flex.ng-tns-c120-4 {
   background-color: #2e9b4ab3 !important;
+}
+
+.icon {
+  font-size: 0px;
+  margin-left: -15px;
+}
+
+.icone{
+  font-size: 15px;
+  color: #ff9900;
 }
